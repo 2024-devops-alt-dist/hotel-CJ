@@ -1,3 +1,52 @@
-body {
-    background-color: skyblue;
+/* body {
+    background-color: #1e2c05;
+} */
+
+@font-face {
+    font-family: 'Cairo';
+    src: url('../fonts/Cairo-ExtraBold.ttf') format('ttf');
+}
+h1 {
+    font-family: 'Cairo';
+    font-weight:600;
+    color : #41551c;
+}
+
+.btn_login {
+    padding: 10px 25px;
+    background-color: #41551c;
+    color: white;
+    letter-spacing: 1px;
+    border-radius: 20px;
+}
+.btn_login:hover {
+    background-color: white;
+    color: #41551c;
+    border : solid 1px #41551c;
+    font-weight: 500;
+}
+
+.full-screen-block {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.custpict {
+    width: 75%;
+}
+
+.test-cadre {
+    border-radius: 20px;
+    max-width: 450px; 
+    width: 100%;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.199);
+}
+
+.center-button {
+    display: flex;
+    justify-content: center;
 }
