@@ -83,77 +83,77 @@ class AppFixtures extends Fixture
         private const PICTURE_PATH = [
             // Toulouse
                 'Chambre Rose Pastel' => [
-                    "https://chambre-hotes-toulouse-la-galerie.fr/wp-content/uploads/2017/03/chambre-hote-toulouse-la-galerie.jpg",
-                    "https://chambre-hotes-toulouse-la-galerie.fr/wp-content/uploads/2017/03/chambre-hote-joan-toulouse-detail.jpg",
-                    "https://chambre-hotes-toulouse-la-galerie.fr/wp-content/uploads/2017/03/chamb-avec-terrasse-toulouse.jpg",
-                    "https://chambre-hotes-toulouse-la-galerie.fr/wp-content/uploads/2017/03/chambre-dhote-joan-toulouse.jpg"
+                    "chambre-rose-pastel-1.jpg",
+                    "chambre-rose-pastel-2.jpg",
+                    "chambre-rose-pastel-3.jpg",
+                    "chambre-rose-pastel-4.jpg"
                 ],
                 'Suite de la Garonne' => [
-                    "https://chambre-hotes-toulouse-la-galerie.fr/wp-content/uploads/2017/03/chambre-hote-joan-toulouse-detail-salon.jpg",
-                    "https://chambre-hotes-toulouse-la-galerie.fr/wp-content/uploads/2017/03/chambre-hote-professionnel-toulouse-la-galerie.jpg",
-                    "https://chambre-hotes-toulouse-la-galerie.fr/wp-content/uploads/2017/03/plus-belle-chambre-toulouse-a-toulouse-la-galerie.jpg",
-                    "https://chambre-hotes-toulouse-la-galerie.fr/wp-content/uploads/2017/03/chamble-kees-salle-deau.jpg"
+                    "suite-de-la-garonne-1.jpg",
+                    "suite-de-la-garonne-2.jpg",
+                    "suite-de-la-garonne-3.jpg",
+                    "suite-de-la-garonne-4.jpg"
                 ],
                 'Chambre des Artistes' => [
-                    "https://www.hotel-innes.com/_novaimg/galleria/1369125.jpg",
-                    "https://www.hotel-innes.com/_novaimg/galleria/1369124.jpg",
-                    "https://www.hotel-innes.com/_novaimg/galleria/1369127.jpg",
-                    "https://www.hotel-innes.com/_novaimg/galleria/1369126.jpg"
+                    "chambre-des-artistes-1.jpg",
+                    "chambre-des-artistes-2.jpg",
+                    "chambre-des-artistes-3.jpg",
+                    "chambre-des-artistes-4.jpg"
                 ],
             // Marseille
                 'Chambre Calanques' => [
-                    "https://www.c2-hotel.com/public/img/big/CHAMBRE11Moyen1jpg_63bd7b06b63f8.jpg",
-                    "https://www.c2-hotel.com/public/img/big/CHAMBRE15Moyenjpg_63bd7a7bb7cd7.jpg",
-                    "https://www.c2-hotel.com/public/img/big/CHAMBRE16Moyenjpg_63bd7a8318825.jpg"
+                    "chambre-calanques-1.jpg",
+                    "chambre-calanques-2.jpg",
+                    "chambre-calanques-3.jpg"
                 ],
                 'Suite Vieux-Port' => [
-                    "https://www.chateau-beaupin.com/media/cache/jadro_resize/rc/ddYCJ4oZ1726126863/jadroRoot/medias/64a68104e7e82/64a6815bbcf14/2023_03_29_chateau-beaupin48046.jpeg",
-                    "https://www.chateau-beaupin.com/media/cache/jadro_resize/rc/lar67Dfb1726126863/jadroRoot/medias/64a68104e7e82/64a681612a6ae/2023_03_29_chateau-beaupin47807.jpeg",
-                    "https://www.chateau-beaupin.com/media/cache/jadro_resize/rc/caY7lAcw1726126863/jadroRoot/medias/64a68104e7e82/64a681612a6ae/2023_03_29_chateau-beaupin47829.jpeg",
-                    "https://www.chateau-beaupin.com/media/cache/jadro_resize/rc/TYFrhLCK1726126863/jadroRoot/medias/64a68104e7e82/64a6815bbcf14/2023_03_29_chateau-beaupin48060.jpeg"
+                    "suite-vieux-port-1.jpeg",
+                    "suite-vieux-port-2.jpeg",
+                    "suite-vieux-port-3.jpeg",
+                    "suite-vieux-port-4.jpeg"
                 ],
                 'Chambre Olives et Herbes' => [
-                    "https://www.ahstatic.com/photos/a0d3_rodbbbc_00_p_2048x1536.jpg",
-                    "https://www.ahstatic.com/photos/a0d3_rodbbbc_01_p_2048x1536.jpg",
-                    "https://www.ahstatic.com/photos/a0d3_rodbbbc_02_p_2048x1536.jpg",
-                    "https://www.ahstatic.com/photos/a0d3_rodbbbc_04_p_2048x1536.jpg"
+                    "chambre-olives-herbes-1.jpg",
+                    "chambre-olives-herbes-2.jpg",
+                    "chambre-olives-herbes-3.jpg",
+                    "chambre-olives-herbes-4.jpg"
                 ],
             // Lyon
                 'Chambre des Bouchons' => [
-                    "https://www.villaflorentine.com/media/cache/jadro_resize/rc/liWGrEhP1717426114/jadroRoot/medias/65cf221006b78/villa-florentine-01780.jpg",
-                    "https://www.villaflorentine.com/media/cache/jadro_resize/rc/usylJeF21717426107/jadroRoot/medias/57e51767428c5/salle_bain_7.jpg",
-                    "https://www.villaflorentine.com/media/cache/jadro_resize/rc/ocxIJ59E1717426113/jadroRoot/medias/65cf221006b78/villa-florentine-01767.jpg"
+                    "chambre-bouchon-1.jpg",                    
+                    "chambre-bouchon-2.jpg",
+                    "chambre-bouchon-3.jpg"
                 ],
                 'Suite Bellecour' => [
-                    "https://www.villaflorentine.com/media/cache/jadro_resize/rc/5zruLU3o1717426114/jadroRoot/medias/65cf221006b78/villa-florentine-02295.jpg",
-                    "https://www.villaflorentine.com/media/cache/jadro_resize/rc/kMnlJpIG1717426114/jadroRoot/medias/65cf221006b78/villa-florentine-02328.jpg",
-                    "https://www.villaflorentine.com/media/cache/jadro_resize/rc/UaKHLQo11717426106/jadroRoot/medias/57e51767428c5/suite-25-4.jpg"
+                    "suite-bellecour-1.jpg",
+                    "suite-bellecour-2.jpg",
+                    "suite-bellecour-3.jpg"
                 ],
                 'Chambre Rhône et Saône' => [
-                    "https://mih.imgix.net/rooms_pictures/161977497428592195608bcdfe1e747.jpg",
-                    "https://mih.imgix.net/rooms_pictures/1619530422500730580608812b628cc2.png",
-                    "https://mih.imgix.net/rooms_pictures/1619530422501182542608812b62abe1.png",
-                    "https://mih.imgix.net/rooms_pictures/1619530422782746526608812b62cc62.png",
-                    "https://mih.imgix.net/rooms_pictures/1619530422729220812608812b62a180.png"
+                    "chambre-rhone-saone-1.jpg",
+                    "chambre-rhone-saone-2.jpg",
+                    "chambre-rhone-saone-3.jpg",
+                    "chambre-rhone-saone-4.jpg",
+                    "chambre-rhone-saone-5.jpg"
                 ],
             // Nantes
                 'Chambre des Machines' => [
-                    "https://www.sozohotel.fr/uploads/media/sozo-hotel-nantes-178897.jpg",
-                    "https://www.sozohotel.fr/uploads/media/sozo-hotel-nantes-106279.jpg",
-                    "https://www.sozohotel.fr/uploads/media/sozo-hotel-nantes-178898.jpg",
-                    "https://www.sozohotel.fr/uploads/media/sozo-hotel-nantes-178900.jpg"
+                    "chambre-des-machines-1.jpg",
+                    "chambre-des-machines-2.jpg",
+                    "chambre-des-machines-3.jpg",
+                    "chambre-des-machines-4.jpg"
                 ],
                 'Suite Jardin des Plantes' => [
-                    "https://www.sozohotel.fr/uploads/media/sozo-hotel-nantes-106274.jpg",
-                    "https://www.sozohotel.fr/uploads/media/sozo-hotel-nantes-106263.jpg",
-                    "https://www.sozohotel.fr/uploads/media/sozo-hotel-nantes-106987.jpg",
-                    "https://www.sozohotel.fr/uploads/media/sozo-hotel-nantes-180283.jpg"
+                    "suite-jardin-des-plantes-1.jpg",
+                    "suite-jardin-des-plantes-2.jpg",
+                    "suite-jardin-des-plantes-3.jpg",
+                    "suite-jardin-des-plantes-4.jpg"
                 ],
                 'Chambre Éclats de Loire' => [
-                    "https://www.sozohotel.fr/uploads/media/sozo-hotel-nantes-106280.jpg",
-                    "https://www.sozohotel.fr/uploads/media/sozo-hotel-nantes-106977.jpg",
-                    "https://www.sozohotel.fr/uploads/media/sozo-hotel-nantes-106979.jpg",
-                    "https://www.sozohotel.fr/uploads/media/sozo-hotel-nantes-178896.jpg"
+                    "chambre-eclat-de-loire-1.jpg",
+                    "chambre-eclat-de-loire-2.jpg",
+                    "chambre-eclat-de-loire-3.jpg",
+                    "chambre-eclat-de-loire-4.jpg"
                 ],
         ];
         private const IMG_PRINC = [

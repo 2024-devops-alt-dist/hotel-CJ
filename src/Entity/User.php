@@ -39,7 +39,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 255)]
     private ?string $lastname = null;
 
-    #[ORM\OneToOne(mappedBy: 'gerant', cascade: ['persist', 'remove'])]
+    #[ORM\OneToOne(mappedBy: 'gerant')]
     private ?Hotel $hotel = null;
 
     /**
@@ -202,5 +202,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         }
 
         return $this;
+    }
+
+    public function __toString(): string
+    {
+        return $this->firstname . ' ' . $this->lastname;
     }
 }

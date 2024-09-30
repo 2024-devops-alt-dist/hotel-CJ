@@ -164,4 +164,9 @@ class Chambre
 
         return $this;
     }
+
+    public function __toString(): string
+    {
+        return $this->title; 
+    }
 }

@@ -1,0 +1,36 @@
+{% extends '@EasyAdmin/crud/index.html.twig' %}
+
+{% block content %}
+    {{ parent() }}
+
+    <!-- Modal Bootstrap -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img id="modalImage" src="" class="img-fluid" alt="Image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const imageLinks = document.querySelectorAll('.image-link');
+
+        imageLinks.forEach(link => {
+            link.addEventListener('click', function (event) {
+                event.preventDefault();
+                const imagePath = this.getAttribute('data-path');
+                const modalImage = document.getElementById('modalImage');
+                modalImage.src = imagePath;
+                const imageModal = new bootstrap.Modal(document.getElementById('imageModal'));
+                imageModal.show();
+            });
+        });
+    });
+    </script>
+{% endblock %}

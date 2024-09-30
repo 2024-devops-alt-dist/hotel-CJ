@@ -28,13 +28,13 @@ class Hotel
     #[ORM\Column(type: Types::TEXT, nullable: true)]
     private ?string $description = null;
 
-    #[ORM\OneToOne(inversedBy: 'hotel', cascade: ['persist', 'remove'])]
+    #[ORM\OneToOne(inversedBy: 'hotel')]
     private ?User $gerant = null;
 
     /**
      * @var Collection<int, Chambre>
      */
-    #[ORM\OneToMany(targetEntity: Chambre::class, mappedBy: 'hotel')]
+    #[ORM\OneToMany(targetEntity: Chambre::class, mappedBy: 'hotel', cascade: ['remove'])]
     private Collection $chambres;
 
     public function __construct()
@@ -135,5 +135,10 @@ class Hotel
         }
 
         return $this;
+    }
+
+    public function __toString(): string
+    {
+        return $this->name;
     }
 }
