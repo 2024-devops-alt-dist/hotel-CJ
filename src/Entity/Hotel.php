@@ -37,6 +37,9 @@ class Hotel
     #[ORM\OneToMany(targetEntity: Chambre::class, mappedBy: 'hotel', cascade: ['remove'])]
     private Collection $chambres;
 
+    #[ORM\Column(length: 300, nullable: true)]
+    private ?string $img = null;
+
     public function __construct()
     {
         $this->chambres = new ArrayCollection();
@@ -140,5 +143,17 @@ class Hotel
     public function __toString(): string
     {
         return $this->name;
+    }
+
+    public function getImg(): ?string
+    {
+        return $this->img;
+    }
+
+    public function setImg(?string $img): static
+    {
+        $this->img = $img;
+
+        return $this;
     }
 }

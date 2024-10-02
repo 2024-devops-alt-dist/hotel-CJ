@@ -1,13 +1,10 @@
-/* body {
-    background-color: #1e2c05;
-} */
-
+/* GLOBAL */
 @font-face {
-    font-family: 'Cairo';
-    src: url('../fonts/Cairo-ExtraBold.ttf') format('ttf');
+    font-family: 'RoxboroughCF';
+    src: url('../fonts/RoxboroughCF.ttf') format('truetype');
 }
 h1 {
-    font-family: 'Cairo';
+    font-family: 'RoxboroughCF';
     font-weight:600;
     color : #41551c;
 }
@@ -26,6 +23,18 @@ h1 {
     font-weight: 500;
 }
 
+.btn_search {
+    padding: 10px 20px;
+    background-color: #85a156;
+    color: white;
+    border-radius: 20px;
+}
+.btn_search:hover {
+    color: #85a156;
+    border : solid 1px #85a156;
+}
+
+/* BACK-OFFICE */
 .full-screen-block {
     width: 100vw;
     height: 100vh;
@@ -39,7 +48,7 @@ h1 {
     width: 75%;
 }
 
-.test-cadre {
+.border-bloc {
     border-radius: 20px;
     max-width: 450px; 
     width: 100%;
@@ -50,3 +59,224 @@ h1 {
     display: flex;
     justify-content: center;
 }
+
+/* NAVBAR CSS */
+
+.img-cust {
+    width: 170px;
+}
+
+.cust-padd {
+    padding-left: 9%;
+}
+
+.navbar {
+    background-color: rgba(252, 251, 251, 0.85); 
+}
+
+/* HOMEPAGE */
+
+.full-height {
+    height: 100vh;
+}
+
+.search-content {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(128, 128, 128, 0.5);
+    border-radius: 20px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.search-content label {
+    font-size: 14px;
+}
+
+.bloc1-bg {
+    position: relative;
+    background-image: url('https://www.aflyon.org/wp-content/uploads/2023/06/bandeau-lyon-vue-fourviere.jpg');
+    background-size: cover;
+    background-position: center; 
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+}
+
+.cust-h1, .cust-p {
+    color: white;
+}
+
+.cust-h1 {
+    font-size: 3rem;
+}
+
+.cust-p {
+    font-size: 1.5rem; 
+    font-weight: 200;
+}
+
+.form-control {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+#hotel {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+#hotel option[disabled] {
+    color: rgba(0, 0, 0, 0.3); 
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .cust-h1 {
+        font-size: 2.5rem; 
+    }
+
+    .cust-p {
+        font-size: 1.2rem; 
+    }
+}
+
+/* PAGE HÔTELS-CHAMBRES */
+/* PRInCIPALE CITY */
+.mt-custo {
+    margin-top: 150px;
+}
+
+.hotel-card {
+    height: 320px;
+    width: 300px;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid rgb(255, 255, 255);
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.row.g-4 {
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: center; 
+}
+
+.hotel-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
+    z-index: 2;
+}
+
+.hotel-link {
+    text-decoration: none;
+    display: block;
+    height: 100%;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease; 
+}
+
+.hotel-card:hover .overlay {
+    background-color: rgba(0, 0, 0, 0.6); 
+}
+
+.card-body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    z-index: 2;
+    position: relative;
+    color: white;
+}
+
+h4 {
+    font-size: 15px;
+    margin-bottom: 0;
+}
+
+.cust-h3 {
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.row.g-4 > * {
+    margin-bottom: 1rem; 
+}
+
+
+/* PAGE DETAIL */
+.bg-color {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(128, 128, 128, 0.6);
+    border-radius: 20px;
+    padding: 40px;
+    margin-top: 20px;
+}
+
+.bg-color i {
+    margin-right: 15px;
+}
+
+.cust-h2 {
+    font-size: 60px;
+    font-weight: 400;
+}
+
+.custTitleHotel {
+    margin-bottom: 0;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.titleRoom {
+    color: black;
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.custRoomAvailable {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.separator {
+    border-top: 2px solid rgba(0, 0, 0, 0.3);
+    width: 80%;
+    margin: 20px auto;
+    margin-bottom: 55px;;
+}
+
+.card-body .image-col {
+    margin-right: 20px;
+}
+
+@media (max-width: 767px) {
+    .card-body .image-col {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
+
+

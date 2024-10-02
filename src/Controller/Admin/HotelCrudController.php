@@ -13,6 +13,7 @@ use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ImageField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
@@ -76,6 +77,10 @@ class HotelCrudController extends AbstractCrudController
                 ->onlyOnIndex(),
             TextareaField::new('description', 'Description :')
                 ->onlyOnForms(),
+            ImageField::new('img', 'Image :')
+                ->setBasePath('assets2/images') 
+                ->setUploadDir('public/assets2/images')
+                ->setUploadedFileNamePattern('[slug].[extension]'),
         ];
     }
 

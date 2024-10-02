@@ -29,6 +29,12 @@ class AppFixtures extends Fixture
         "Hôtel du Clair de Lune Marseille",
         "Hôtel du Clair de Lune Lyon",
         "Hôtel du Clair de Lune Nantes"];
+
+        private const IMG_HOTEL = [
+            "toulouse.jpg",
+            "marseille.jpg",
+            "lyon.jpg",
+            "nantes.jpg"];
     private const CITY_HOTELS = ["Toulouse","Marseille","Lyon","Nantes"];
     private const ADDRESS_HOTELS = [
         "3 Av. Irène Joliot-Curie, 31100 Toulouse",
@@ -276,6 +282,7 @@ class AppFixtures extends Fixture
             $hotel
                 ->setGerant($gerants[$i])
                 ->setName(self::NAME_HOTELS[$i])
+                ->setImg(self::IMG_HOTEL[$i])
                 ->setCity(self::CITY_HOTELS[$i])
                 ->setAddress(self::ADDRESS_HOTELS[$i])
                 ->setDescription(self::DESCRIPTION_HOTELS[$i]);

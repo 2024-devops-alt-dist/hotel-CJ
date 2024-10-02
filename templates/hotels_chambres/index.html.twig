@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HotelsChambresController!{% endblock %}
+
+{% block body %}
+{% include 'layouts/navbar.html.twig' %}
+
+{# Bloc 1 : Affichage des hôtels/chambre #}
+<div class="mt-custo">
+    <div class="container d-flex flex-column align-items-center justify-content-center">
+        <div class="mb-5">
+            <h1>Retrouvez nos hôtels Clair de Lune et leurs chambres</h1>
+        </div>
+        <div class="row justify-content-center g-4">  
+            {% for hotel in hotels %}
+                <div class="col-12 col-sm-6 col-md-4 col-lg-2 d-flex justify-content-center">
+                    <div class="card hotel-card position-relative" style="background-image: url('/assets2/images/{{ hotel.img }}'); background-size: cover; background-position: center;">
+                        <a href="{{ path('app_hotel_detail', { 'id': hotel.id }) }}" class="hotel-link">
+                            <div class="overlay"></div>
+                            <div class="card-body d-flex flex-column justify-content-end">
+                                <h4 class="card-text text-white">Hotel Clair de Lune</h4>
+                                <h3 class="card-text cust-h3 text-white">{{ hotel.city }}</h3>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

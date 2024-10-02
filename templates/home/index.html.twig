@@ -1,0 +1,89 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil - Hôtel Clair de Lune{% endblock %}
+
+{% block body %}
+{% include 'layouts/navbar.html.twig' %}
+
+{# Bloc 1 : full page search #}
+<div class="bloc1-bg">
+    <div class="overlay"></div>
+    <div class="container d-flex flex-column align-items-center justify-content-center full-height">
+        <div class="text-center">
+            <h1 class="cust-h1">Ressourcez-vous en pleine nature</h1>
+            <p class="cust-p">Bienvenue à la chaîne d'hôtels Clair de Lune</p>
+        </div>
+
+        <div class="search-content">
+            <form method="" class="d-flex flex-wrap align-items-center justify-content-center">
+                <div class="me-2 col-12 col-md-4">
+                    <label for="hotel" class="form-label">Choisissez un hôtel</label>
+                    <select class="form-select" id="hotel" name="hotel" required>
+                        <option value="" disabled selected>Sélectionnez un hôtel</option>
+                        {% for hotel in hotels %}
+                            <option value="{{ hotel.id }}">{{ hotel.name }}</option>
+                        {% endfor %}
+                    </select>
+                    
+                    
+                </div>
+                
+                <div class="me-2 col-12 col-md-5 d-flex justify-content-between"> 
+                    <div class="w-50 me-1">
+                        <label for="start_date" class="form-label">Date de début</label>
+                        <input type="date" class="form-control" id="start_date" name="start_date" required>
+                    </div>
+                    <div class="w-50">
+                        <label for="end_date" class="form-label">Date de fin</label>
+                        <input type="date" class="form-control" id="end_date" name="end_date" required>
+                    </div>
+                </div>
+
+                <div class="me-2 col-12 col-md-2 d-flex align-items-center justify-content-between"> 
+                    <div class="me-1">
+                        <label for="guests" class="form-label">Nb pers.</label>
+                        <input type="number" class="form-control" id="guests" name="guests" min="1" value="1" required>
+                    </div>
+                    <div class="align-self-end">
+                        <button type="submit" class="btn btn_search"><i class="fas fa-search"></i></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{# Bloc 2 : ????? #}
+<div class="my-5">
+    <div class="container d-flex flex-column flex-md-row align-items-center justify-content-center py-5">
+        <div class="col-md-6 mb-4 mb-lg-0 pe-md-3 pe-lg-5" >
+            <img src="https://www.routedesvins.alsace/wp-content/uploads/lei/pictures/258000005-6717-nature-hotel-et-spa-le-clos-des-delices-5-1600x900.jpg" alt="Image" class="img-fluid" style="width: 450; height: 300px; object-fit: cover;">
+        </div>
+        <div class="col-md-6">
+            <h1>Des emplacements parfaits pour vos escapades</h1>
+            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla turpis ex, rutrum vitae nunc sed, cursus tempus tortor. Curabitur at elit cursus, consectetur nunc in, suscipit nunc. Aliquam efficitur nulla vel odio iaculis dignissim. Pellentesque iaculis hendrerit libero, eget bibendum enim iaculis vel. Donec pharetra sollicitudin magna ac placerat. Suspendisse at ullamcorper neque. Vivamus commodo odio mi, quis luctus urna bibendum pellentesque. Ut cursus odio fringilla ante cursus vestibulum. Aenean vel fermentum orci, et consectetur ligula.</p>
+        </div>
+    </div>
+</div>
+
+{# Bloc 3 : ????? #}
+<div class="" style="border: 2px solid red;">
+    <div class="container d-flex flex-column align-items-center justify-content-center full-height" style="border: 1px solid blue;">
+        <div class="text-center" style="border: 1px solid green;">
+            <h1>Contenu du bloc 3 </h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque sit corrupti nesciunt perferendis dignissimos ex numquam vero doloribus distinctio labore tenetur a nemo, neque veniam molestias atque ipsam modi praesentium!</p>
+        </div>
+    </div>
+</div>
+
+{# Bloc 4 : ????? #}
+<div class="" style="border: 2px solid red;">
+    <div class="container d-flex flex-column align-items-center justify-content-center full-height" style="border: 1px solid blue;">
+        <div class="text-center" style="border: 1px solid green;">
+            <h1>Contenu du bloc 4 </h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque sit corrupti nesciunt perferendis dignissimos ex numquam vero doloribus distinctio labore tenetur a nemo, neque veniam molestias atque ipsam modi praesentium!</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
