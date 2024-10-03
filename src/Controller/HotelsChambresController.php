@@ -38,7 +38,7 @@ public function showHotel(Hotel $hotel, Request $request): Response
     $endDate = $request->query->get('end_date');
     $guests = $request->query->get('guests');
 
-    // Récupérer l'id de l'hôtel sélectionné
+    // Récupérer id hôtel sélectionné
     $selectedHotelId = $request->query->get('hotel');
     if ($selectedHotelId) {
         $hotel = $this->entityManager->getRepository(Hotel::class)->find($selectedHotelId);
