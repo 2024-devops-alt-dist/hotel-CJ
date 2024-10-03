@@ -25,7 +25,7 @@
 <section>
     <div class="container">
         <div class="search-content mt-5">
-            <form method="" class="d-flex flex-wrap align-items-center justify-content-center">
+            <form method="GET" action="{{ path('app_hotel_detail', {'id': hotel.id}) }}" class="d-flex flex-wrap align-items-center justify-content-center">
                 <div class="me-2 col-12 col-md-4">
                     <label for="hotel" class="form-label">Choisissez un hôtel</label>
                     <select class="form-select" id="hotel" name="hotel" required>
@@ -72,9 +72,7 @@
 
             <div class="separator"></div>
 
-            {# ici mettre la bar de filtre (prix, m²) #}
-
-            {% for chambre in hotel.chambres %}
+            {% for chambre in availableChambres %}
                 <div class="col-12 mb-4">
                     <div class="card">
                         <div class="card-body d-flex flex-column flex-md-row"> 
@@ -93,7 +91,7 @@
                                     </p>
                                     <div>
                                         <a href="#" class="btn btn-secondary me-2" data-bs-toggle="modal" data-bs-target="#roomDetailsModal{{ chambre.id }}">En savoir+</a>
-                                        <a href="#" class="btn btn-primary">Réserver</a>
+                                        <a href="#" class="btn btn_search">Réserver</a>
                                     </div>
                                 </div>
                             </div>
@@ -101,11 +99,12 @@
                     </div>
                 </div>
             {% else %}
-                <p>Aucune chambre disponible pour cet hôtel.</p>
+                <p>Aucune chambre disponible pour cet hôtel durant ces dates.</p>
             {% endfor %}
         </div>
     </div>
 </section>
+
 
 {% for chambre in hotel.chambres %}
     {# Modal #}

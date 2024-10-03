@@ -9,7 +9,7 @@ h1 {
     color : #41551c;
 }
 
-.btn_login, .btn_contact {
+.btn_login, .btn_contact, .custBgBtn {
     padding: 10px 25px;
     background-color: #41551c;
     color: white;
@@ -79,6 +79,13 @@ h1 {
 
 .navbar {
     background-color: rgba(252, 251, 251, 0.85); 
+}
+
+.custBgBtn:hover {
+    background-color: rgba(255, 255, 255, 0);
+    color: #41551c;
+    border : solid 1px #41551c;
+    font-weight: 500;
 }
 
 /* FOOTER */
