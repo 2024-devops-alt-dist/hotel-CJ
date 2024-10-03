@@ -1,0 +1,45 @@
+<footer class="bgFooter text-white pt-5 pb-3">
+    <div class="container">
+        <div class="row text-center text-md-start">
+            <div class="col-md-3">
+                <img src="/assets2/images/logo_ts.png" alt="Logo" class="img-fluid me-3 mb-3 mb-md-0" style="width: 250px;">
+            </div>
+            <div class="col-md-3">
+                <h4 class="mb-2 mob-custTitle">Les hôtels Clair de Lune :</h4>
+                {% if hotels is not empty %}
+                    {% for hotel in hotels %}
+                        <p class="mb-0">{{ hotel.name }}</p>
+                    {% endfor %}
+                {% else %}
+                    <p class="mb-0">Aucun hôtel disponible.</p>
+                {% endif %}
+            </div>
+            <div class="col-md-2">
+                <h4 class="mb-2 mob-custTitle">Les plus :</h4>
+                <p class="mb-0">Nous contacter</p>
+                <p class="mb-0">FAQ</p>
+                <p class="mb-0">Mention Légale</p>
+                <p class="mb-0">CGU / CGV</p> 
+            </div>
+            <div class="col-md-3">
+                <h4 class="mb-2 mob-custTitle">Suivez-nous</h4>
+                <ul class="list-unstyled d-flex">
+                    <li><a href="#" class="text-white me-3"><i class="fab fa-facebook fa-xl"></i></a></li>
+                    <li><a href="#" class="text-white me-3"><i class="fab fa-twitter fa-xl"></i></a></li>
+                    <li><a href="#" class="text-white"><i class="fab fa-instagram fa-xl"></i></a></li>
+                </ul>
+                <h4 class="mt-4 mb-2">Newsletter</h4>
+                <form>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Votre email" aria-label="Votre email" required>
+                        <button class="btn btn-outline-light" type="submit">S'inscrire</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <hr class="my-4" style="border-top: 1px solid #cccccc83;">
+        <div class="text-center mt-4">
+            <p>© {{ "now"|date("Y") }} Hôtel Clair de Lune. Tous droits réservés.</p>
+        </div>
+    </div>
+</footer>

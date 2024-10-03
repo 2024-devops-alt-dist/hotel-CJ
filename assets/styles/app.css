@@ -9,7 +9,7 @@ h1 {
     color : #41551c;
 }
 
-.btn_login {
+.btn_login, .btn_contact {
     padding: 10px 25px;
     background-color: #41551c;
     color: white;
@@ -32,6 +32,13 @@ h1 {
 .btn_search:hover {
     color: #85a156;
     border : solid 1px #85a156;
+}
+
+.btn_contact:hover {
+    background-color: rgba(255, 255, 255, 0);
+    color: #41551c;
+    border : solid 1px #41551c;
+    font-weight: 500;
 }
 
 /* BACK-OFFICE */
@@ -74,8 +81,32 @@ h1 {
     background-color: rgba(252, 251, 251, 0.85); 
 }
 
-/* HOMEPAGE */
+/* FOOTER */
+.bgFooter {
+    background-color: #273310;
+}
 
+footer a {
+    color: #fff;
+}
+
+footer a:hover {
+    color: #ccc;
+}
+
+hr {
+    border-top: 1px solid #ccc;
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+    .mob-custTitle {
+        margin-top: 30px;
+    }
+}
+
+/* HOMEPAGE */
+/* Bloc 1  */
 .full-height {
     height: 100vh;
 }
@@ -150,10 +181,96 @@ h1 {
     }
 }
 
+/* Bloc 3 : avanatges */
+.bg-img {
+    background-image: url('/assets2/images/bg-home.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.green-color, .cust-txt {
+    color: #ffffff;
+}
+
+.cust-txt {
+    font-weight: 500;
+}
+
+.icon-img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+/* Responsive columns */
+@media (max-width: 576px) {
+    .icon-img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .cust-txt {
+        font-size: 0.9rem;
+    }
+}
+
+/* Bloc 4 : Map */
+.cityTitleh2 a {
+    color: #41551c;
+    text-decoration: none;
+}
+
+.cityTitleh2 a:hover {
+    color: #85a156;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    p {
+        font-size: 1rem; 
+    }
+    
+    .cityTitleh2 a {
+        font-size: 1.2rem; 
+    }
+}
+
+/* Bloc 5 : Engagements3 */
+.bgGreenEngagement {
+    background-color: #899672;
+    opacity: 84%;
+    margin-top: 50px;
+}
+
+.btn-suite {
+    padding: 10px 25px;
+    background-color: #41551c;
+    color: white;
+    letter-spacing: 1px;
+    border-radius: 20px;
+}
+
+.btn-suite:hover {
+    background-color: rgba(255, 255, 255, 0);
+    color: #ffffff;
+    border : solid 1px #ffffff;
+    font-weight: 500;
+}
+
 /* PAGE HÔTELS-CHAMBRES */
 /* PRInCIPALE CITY */
 .mt-custo {
-    margin-top: 150px;
+    margin-top: 40px;
 }
 
 .hotel-card {
@@ -279,4 +396,28 @@ h4 {
     }
 }
 
+/* Contact */
+.bg-color-cust {
+    background-color: #85a156;
+}
 
+.mtCusto {
+    padding-top: 100px;
+}
+
+.bg-form-contact {
+    background-color: rgba(255, 255, 255, 0.555);
+    border-radius: 25px;
+    padding: 35px;
+}
+
+/* Améliorations pour les écrans plus petits */
+@media (max-width: 990px) {
+    /* .mtCusto {
+        padding-top: 300px; 
+    }
+    .mtCusto h2 {
+        margin-bottom: 50px; 
+    } */
+
+}

@@ -17,12 +17,12 @@
                     <a class="nav-link" href="{{ path('app_hotels_chambres')}}">Hôtels et Chambres</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="{{ path('app_contact')}}">Contact</a>
                 </li>
             </ul>
 
             <ul class="navbar-nav ms-auto">
-                <button class="btn mx-2 btn-primary" id="" href="#">Réserver</button>
+                <button class="btn mx-2 btn_search" id="" href="{{ path('app_hotels_chambres')}}">Réserver</button>
                 {# {% if app.user %}
                 <li class="nav-item">
                     <a class="nav-link" href="">Se déconnecter</a>

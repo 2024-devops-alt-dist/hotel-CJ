@@ -6,7 +6,7 @@
 {% include 'layouts/navbar.html.twig' %}
 
 {# Bloc 1 : full page search #}
-<div class="bloc1-bg">
+<section class="bloc1-bg">
     <div class="overlay"></div>
     <div class="container d-flex flex-column align-items-center justify-content-center full-height">
         <div class="text-center">
@@ -15,7 +15,7 @@
         </div>
 
         <div class="search-content">
-            <form method="" class="d-flex flex-wrap align-items-center justify-content-center">
+            <form method="GET" action="{{ path('app_search_hotel') }}" class="d-flex flex-wrap align-items-center justify-content-center">
                 <div class="me-2 col-12 col-md-4">
                     <label for="hotel" class="form-label">Choisissez un hôtel</label>
                     <select class="form-select" id="hotel" name="hotel" required>
@@ -51,10 +51,10 @@
             </form>
         </div>
     </div>
-</div>
+</section>
 
-{# Bloc 2 : ????? #}
-<div class="my-5">
+{# Bloc 2 : About #}
+<section class="my-5">
     <div class="container d-flex flex-column flex-md-row align-items-center justify-content-center py-5">
         <div class="col-md-6 mb-4 mb-lg-0 pe-md-3 pe-lg-5" >
             <img src="https://www.routedesvins.alsace/wp-content/uploads/lei/pictures/258000005-6717-nature-hotel-et-spa-le-clos-des-delices-5-1600x900.jpg" alt="Image" class="img-fluid" style="width: 450; height: 300px; object-fit: cover;">
@@ -64,26 +64,75 @@
             <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla turpis ex, rutrum vitae nunc sed, cursus tempus tortor. Curabitur at elit cursus, consectetur nunc in, suscipit nunc. Aliquam efficitur nulla vel odio iaculis dignissim. Pellentesque iaculis hendrerit libero, eget bibendum enim iaculis vel. Donec pharetra sollicitudin magna ac placerat. Suspendisse at ullamcorper neque. Vivamus commodo odio mi, quis luctus urna bibendum pellentesque. Ut cursus odio fringilla ante cursus vestibulum. Aenean vel fermentum orci, et consectetur ligula.</p>
         </div>
     </div>
-</div>
+</section>
 
-{# Bloc 3 : ????? #}
-<div class="" style="border: 2px solid red;">
-    <div class="container d-flex flex-column align-items-center justify-content-center full-height" style="border: 1px solid blue;">
-        <div class="text-center" style="border: 1px solid green;">
-            <h1>Contenu du bloc 3 </h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque sit corrupti nesciunt perferendis dignissimos ex numquam vero doloribus distinctio labore tenetur a nemo, neque veniam molestias atque ipsam modi praesentium!</p>
+{# Bloc 3 : Avantages #}
+<section class="pt-3">
+    <div class="bg-img py-5">
+        <div class="container d-flex flex-column align-items-center justify-content-center py-5">
+            <div class="text-center">
+                <h1 class="mb-4 text-white">Les avantages de nos Hôtels Clair de Lune</h1>
+                <p class="mb-4 green-color">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque sit corrupti nesciunt perferendis dignissimos ex numquam vero doloribus distinctio labore tenetur a nemo, neque veniam molestias atque ipsam modi praesentium!</p>
+            </div>
+
+            <div class="row text-center mt-3">
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <img src="/assets2/images/icon/nature.png" alt="Image" class="img-fluid icon-img mb-3">
+                    <p class="cust-txt">CADRE NATUREL & CALME</p>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <img src="/assets2/images/icon/activity.png" alt="Image" class="img-fluid icon-img mb-3">
+                    <p class="cust-txt">NOMBREUSES ACTIVITES</p>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <img src="/assets2/images/icon/animals.png" alt="Image" class="img-fluid icon-img mb-3">
+                    <p class="cust-txt">PETFRIENDLY</p>
+                </div>
+                <div class="col-12 col-sm-6 col-md-3 mb-4">
+                    <img src="/assets2/images/icon/client_service.png" alt="Image" class="img-fluid icon-img mb-3">
+                    <p class="cust-txt">SERVICE CLIENT IRREPROCHABLE</p>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+</section>
 
-{# Bloc 4 : ????? #}
-<div class="" style="border: 2px solid red;">
-    <div class="container d-flex flex-column align-items-center justify-content-center full-height" style="border: 1px solid blue;">
-        <div class="text-center" style="border: 1px solid green;">
-            <h1>Contenu du bloc 4 </h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque sit corrupti nesciunt perferendis dignissimos ex numquam vero doloribus distinctio labore tenetur a nemo, neque veniam molestias atque ipsam modi praesentium!</p>
+{# Bloc 4 : Map #}
+<section class="py-1">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-12 col-md-7 mb-4 mb-md-0">
+                <h1>Retrouvez-nous dans toute la France !</h1>
+                <p class="text-justify">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla turpis ex, rutrum vitae nunc sed, cursus tempus tortor.
+                </p>
+                <ul class="list-unstyled">
+                    {% for hotel in hotels %}
+                    <li>
+                        <h2 class="cityTitleh2">
+                            <a href="{{ path('app_hotel_detail', {id: hotel.id}) }}" class="text-decoration-none">
+                                {{ hotel.city }}
+                            </a>
+                        </h2>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            
+            <div class="col-12 col-md-5 text-center text-md-end">
+                <img src="/assets2/images/mapfrance.png" alt="Carte de la France" class="img-fluid" style="max-width: 100%; height: auto; object-fit: cover;">
+            </div>
         </div>
     </div>
-</div>
+</section>
+
+{# Bloc 5 : Nos engagements #}
+<section class="bgGreenEngagement py-5">
+    <div class="container d-flex flex-column align-items-center justify-content-between py-4">
+        <h1 class="text-white mb-4">Nos engagements</h1>
+        <p class="text-white mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla turpis ex, rutrum vitae nunc sed, cursus tempus tortor. Curabitur at elit cursus, consectetur nunc in, suscipit nunc. Aliquam efficitur nulla vel odio iaculis dignissim. Pellentesque iaculis hendrerit libero, eget bibendum enim iaculis vel. Donec pharetra sollicitudin magna ac placerat. Suspendisse at ullamcorper neque. Vivamus commodo odio mi, quis luctus urna bibendum pellentesque. Ut cursus odio fringilla ante cursus vestibulum. Aenean vel fermentum orci, et consectetur ligula.</p>
+        <button type="submit" class="btn btn-suite">En savoir +</button>
+    </div>
+</section>
 
 {% endblock %}

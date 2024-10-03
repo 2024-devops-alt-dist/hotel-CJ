@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Détails de l'hôtel: {{ hotel.name }}{% endblock %}
+{% block title %}{{ hotel.name }}{% endblock %}
 
 {% block body %}
 {% include 'layouts/navbar.html.twig' %}
@@ -29,31 +29,30 @@
                 <div class="me-2 col-12 col-md-4">
                     <label for="hotel" class="form-label">Choisissez un hôtel</label>
                     <select class="form-select" id="hotel" name="hotel" required>
-                        {# <option value="" disabled selected>Sélectionnez un hôtel</option>il faudrait que l'hotel sélectionné soit affiché #}
-                        {% for hotel in hotels %}
-                            <option value="{{ hotel.id }}">{{ hotel.name }}</option>
+                        <option value="" disabled>Sélectionnez un hôtel</option>
+                        {% for h in hotels %}
+                            <option value="{{ h.id }}" {% if hotel.id == h.id %}selected{% endif %}>
+                                {{ h.name }}
+                            </option>
                         {% endfor %}
-
                     </select>
-                    
-                    
                 </div>
                 
                 <div class="me-2 col-12 col-md-5 d-flex justify-content-between"> 
                     <div class="w-50 me-1">
                         <label for="start_date" class="form-label">Date de début</label>
-                        <input type="date" class="form-control" id="start_date" name="start_date" required>
+                        <input type="date" class="form-control" id="start_date" name="start_date" value="{{ start_date }}" required>
                     </div>
                     <div class="w-50">
                         <label for="end_date" class="form-label">Date de fin</label>
-                        <input type="date" class="form-control" id="end_date" name="end_date" required>
+                        <input type="date" class="form-control" id="end_date" name="end_date" value="{{ end_date }}" required>
                     </div>
                 </div>
 
                 <div class="me-2 col-12 col-md-2 d-flex align-items-center justify-content-between"> 
                     <div class="me-1">
                         <label for="guests" class="form-label">Nb pers.</label>
-                        <input type="number" class="form-control" id="guests" name="guests" min="1" value="1" required>
+                        <input type="number" class="form-control" id="guests" name="guests" min="1" value="{{ guests }}" required>
                     </div>
                     <div class="align-self-end">
                         <button type="submit" class="btn btn_search"><i class="fas fa-search"></i></button>
