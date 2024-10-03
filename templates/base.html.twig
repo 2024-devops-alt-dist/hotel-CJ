@@ -15,7 +15,9 @@
     </head>
     
     <body>
-        {% include 'layouts/navbar.html.twig' %}
+        {% if app.request.attributes.get('_route') != 'app_login' %}
+            {% include 'layouts/navbar.html.twig' %}
+        {% endif %}
 
         {% block body %}
         
