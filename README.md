@@ -29,8 +29,8 @@ Avant de récupérer et installer ce projet, assurez-vous d'avoir installé les 
 
 ## Récupération du projet
 Vous pouvez cloner le projet de deux façons :
-- **En HTTPS** : git clone ?????
-- **En SSH** : git clone ?????
+- **En HTTPS** : git clone https://github.com/2024-devops-alt-dist/hotel-cj.git
+- **En SSH** : git clone git@github.com:2024-devops-alt-dist/hotel-cj.git
 
 Puis vous pouvez installer les dépendances :
 ```
