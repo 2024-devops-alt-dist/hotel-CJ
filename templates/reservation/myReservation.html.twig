@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Profil - Mes réservations{% endblock %}
+
+{% block body %}
+    <div class="container custMargBloc">
+        <h1 class="text-center mb-5">Mes réservations</h1>
+        {% if app.session.flashBag.has('success') %}
+        <div class="alert alert-success confirmation-message">
+            {% for message in app.session.flashBag.get('success') %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+        {% if reservations is empty %}
+            <p class="text-center">Aucune réservation trouvée.</p>
+        {% else %}
+        <div class="row">
+            {% for reservation in reservations %}
+                {% for chambre in reservation.getChambre() %}
+                    <div class="col-md-6 mb-4">
+                        <div class="card">
+                            <div class="row no-gutters">
+                                <div class="col-md-4">
+                                    {% set imagePrincipale = chambre.images|filter(image => image.isPrincipale) | first %}
+                                    <img src="{{ asset('uploads/images/' ~ imagePrincipale.path)}}" class="card-img" alt="{{ chambre.title }}" style="width: 100%; height: 300px; object-fit: cover;">
+                                </div>
+                                <div class="col-md-8 ">
+                                    <div class="card-body text-black">
+                                        <h5 class="card-title">{{ chambre.hotel.name }}</h5>
+                                        <p class="card-text">
+                                            <strong>Chambre :</strong> {{ chambre.title }} <br>
+                                            <strong>Prix par nuit :</strong> {{ chambre.price }}€ <br>
+                                            <strong>Date de début :</strong> {{ reservation.dateStart|date('d/m/Y') }} <br>
+                                            <strong>Date de fin :</strong> {{ reservation.dateEnd|date('d/m/Y') }} <br>
+                                            <strong>Nombre de nuits :</strong> {{ (reservation.dateEnd | date('U') - reservation.dateStart | date('U')) / 86400 }} jours <br>
+                                            <strong>Total :</strong> {{ reservation.totalPrice }} €
+                                        </p>
+                                        {% if reservation.isCancelled %}
+                                            <div class="alert alert-warning">
+                                                Vous avez annulé ce séjour.
+                                            </div>
+                                        {% else %}
+                                            <div class="d-flex justify-content-start align-items-center">
+                                                <a href="#" class="btn btn_search me-2" data-bs-toggle="modal" data-bs-target="#roomDetailsModal{{ chambre.id }}">Détail chambre</a>
+                                                
+                                                {% if (reservation.dateStart|date('U') - "now"|date('U')) > 259200 %}
+                                                    <form action="{{ path('app_reservation_cancel', { id: reservation.id }) }}" method="post" style="display:inline;">
+                                                        <button type="submit" class="btn btn-danger" onclick="return confirm('Êtes-vous sûr de vouloir annuler cette réservation ?');">Annuler</button>
+                                                    </form>
+                                                {% else %}
+                                                    <span class="text-secondary">Annulation impossible 
+                                                        <span data-bs-toggle="tooltip" title="Vous ne pouvez pas annuler cette réservation, car l'annulation doit être faite au moins 3 jours avant la date de début." class="icon-info">
+                                                            <i class="fas fa-info-circle"></i>
+                                                        </span>
+                                                    </span>
+                                                {% endif %}
+                                            </div>
+                                        {% endif %}                                           
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+
+    <script>
+        // Activer les tooltips
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+
+        // Masquer les messages de confirmation d'annulation après 10 secondes
+        setTimeout(function() {
+            var flashMessages = document.querySelectorAll('.confirmation-message');
+            flashMessages.forEach(function(flashMessage) {
+                flashMessage.style.display = 'none';
+            });
+        }, 10000); 
+    </script>
+{% endblock %}
+

@@ -420,13 +420,8 @@ h4 {
     padding: 35px;
 }
 
-/* Améliorations pour les écrans plus petits */
-@media (max-width: 990px) {
-    /* .mtCusto {
-        padding-top: 300px; 
-    }
-    .mtCusto h2 {
-        margin-bottom: 50px; 
-    } */
 
+/* Mes réservation - Profil */
+.custMargBloc {
+    margin-top: 140px;
 }

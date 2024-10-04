@@ -22,21 +22,24 @@
             </ul>
 
             <ul class="navbar-nav ms-auto">
-                <button class="btn mx-2 custBgBtn" id="" href="{{ path('app_hotels_chambres')}}">Réserver</button>
-
-                {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_GERANT') %}
-                    <li class="nav-item">
-                        <a class="nav-link btn btn-primary mx-2" href="{{ path('admin') }}">BackOffice</a>
-                    </li>
-                {% endif %}
+                <button class="btn mx-2 custBgBtn" id="" href="{{ path('app_hotels_chambres') }}">Réserver</button>
 
                 {% if app.user %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ path('app_logout')}}">Se déconnecter</a>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Mon profil
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="{{ path('app_my_reservation') }}">Mes réservations</a></li>
+                            <li><a class="dropdown-item" href="{{ path('app_logout') }}">Se déconnecter</a></li>
+                            {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_GERANT') %}
+                                <li><a class="dropdown-item" href="{{ path('admin') }}">BackOffice</a></li>
+                            {% endif %}
+                        </ul>
                     </li>
                 {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ path('app_login')}}">Se connecter</a>
+                        <a class="nav-link" href="{{ path('app_login') }}">Se connecter</a>
                     </li>
                 {% endif %}
             </ul>

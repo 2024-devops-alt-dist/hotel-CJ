@@ -35,6 +35,9 @@ class Reservation
     #[ORM\ManyToMany(targetEntity: Chambre::class, inversedBy: 'reservations')]
     private Collection $chambre;
 
+    #[ORM\Column]
+    private ?bool $isCancelled = null;
+
     public function __construct()
     {
         $this->chambre = new ArrayCollection();
@@ -113,6 +116,18 @@ class Reservation
     public function removeChambre(Chambre $chambre): static
     {
         $this->chambre->removeElement($chambre);
+
+        return $this;
+    }
+
+    public function isCancelled(): ?bool
+    {
+        return $this->isCancelled;
+    }
+
+    public function setCancelled(bool $isCancelled): static
+    {
+        $this->isCancelled = $isCancelled;
 
         return $this;
     }
