@@ -23,55 +23,24 @@
 
             <ul class="navbar-nav ms-auto">
                 <button class="btn mx-2 custBgBtn" id="" href="{{ path('app_hotels_chambres')}}">Réserver</button>
-                {# {% if app.user %}
+
+                {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_GERANT') %}
                     <li class="nav-item">
-                        <a class="nav-link" href="">Se déconnecter</a>
+                        <a class="nav-link btn btn-primary mx-2" href="{{ path('admin') }}">BackOffice</a>
                     </li>
-                    {% else %} #}
+                {% endif %}
+
+                {% if app.user %}
                     <li class="nav-item">
-                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Se connecter</a>
+                        <a class="nav-link" href="{{ path('app_logout')}}">Se déconnecter</a>
                     </li>
-                {# {% endif %} #}
+                {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('app_login')}}">Se connecter</a>
+                    </li>
+                {% endif %}
             </ul>
         </div>
     </div>
 </nav>
-
-<!-- Modal LOGIN CLIENT -->
-<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-body ">
-                <button type="button" class="btn-close position-absolute top-0 end-0 m-5" data-bs-dismiss="modal" aria-label="Close"></button>
-                <form action="{{ path('app_login') }}" method="POST">
-                    <div class="border-bloc p-5">
-                        <div class="text-center">
-                            <img src="/assets2/images/logo_ts.png" class="custpict" alt="logo">
-                        </div>
-                        <h1 class="my-4 text-center">Connectez-vous</h1>
-        
-                        <div class="">
-                            <div class="mb-3">
-                                <label class="pb-2" for="username">Email</label>
-                                <input type="email" name="_username" id="username" class="form-control" autocomplete="email" required autofocus>
-                            </div>
-                            <div>
-                                <label class="pb-2" for="password">Password</label>
-                                <input type="password" name="_password" id="password" class="form-control" autocomplete="current-password" required>
-                            </div>
-                        </div>
-                
-                        <div class="center-button mt-5">
-                            <button class="btn btn-md btn_login" type="submit">
-                                Se connecter
-                            </button>
-                        </div>
-                        <p class="text-center mt-3">Vous n'avez pas de compte ? <a class="text-muted" href="" data-bs-dismiss="modal" aria-label="Close">Créez en un !</a></p>
-
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
 

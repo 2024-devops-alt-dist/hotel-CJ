@@ -31,51 +31,51 @@ class HotelsChambresController extends AbstractController
     }
 
     #[Route('/hotels/{id}', name: 'app_hotel_detail')]
-public function showHotel(Hotel $hotel, Request $request): Response
-{
-    $hotels = $this->entityManager->getRepository(Hotel::class)->findAll();
-    $startDate = $request->query->get('start_date');
-    $endDate = $request->query->get('end_date');
-    $guests = $request->query->get('guests');
+    public function showHotel(Hotel $hotel, Request $request): Response
+    {
+        $hotels = $this->entityManager->getRepository(Hotel::class)->findAll();
+        $startDate = $request->query->get('start_date');
+        $endDate = $request->query->get('end_date');
+        $guests = $request->query->get('guests');
 
-    // Récupérer id hôtel sélectionné
-    $selectedHotelId = $request->query->get('hotel');
-    if ($selectedHotelId) {
-        $hotel = $this->entityManager->getRepository(Hotel::class)->find($selectedHotelId);
-    }
-
-    // Convertir dates objets DateTime
-    $startDateTime = new \DateTime($startDate);
-    $endDateTime = new \DateTime($endDate);
-
-    $chambres = $hotel->getChambres();
-
-    // Filtre chbr dispo
-    $availableChambres = [];
-    foreach ($chambres as $chambre) {
-        // Vérif résa chbr
-        $reservations = $this->entityManager->getRepository(Reservation::class)->createQueryBuilder('r')
-            ->innerJoin('r.chambre', 'c')
-            ->where('c.id = :chambreId')
-            ->andWhere('r.date_start < :endDate AND r.date_end > :startDate')
-            ->setParameter('chambreId', $chambre->getId())
-            ->setParameter('startDate', $startDateTime)
-            ->setParameter('endDate', $endDateTime)
-            ->getQuery()
-            ->getResult();
-
-        if (count($reservations) === 0) {
-            $availableChambres[] = $chambre;
+        // Récupérer id hôtel sélectionné
+        $selectedHotelId = $request->query->get('hotel');
+        if ($selectedHotelId) {
+            $hotel = $this->entityManager->getRepository(Hotel::class)->find($selectedHotelId);
         }
-    }
 
-    return $this->render('hotels_chambres/details.html.twig', [
-        'hotel' => $hotel,
-        'hotels' => $hotels,
-        'start_date' => $startDate,
-        'end_date' => $endDate,
-        'guests' => $guests,
-        'availableChambres' => $availableChambres, 
-    ]);
-}
+        // Convertir dates objets DateTime
+        $startDateTime = new \DateTime($startDate);
+        $endDateTime = new \DateTime($endDate);
+
+        $chambres = $hotel->getChambres();
+
+        // Filtre chbr dispo
+        $availableChambres = [];
+        foreach ($chambres as $chambre) {
+            // Vérif résa chbr
+            $reservations = $this->entityManager->getRepository(Reservation::class)->createQueryBuilder('r')
+                ->innerJoin('r.chambre', 'c')
+                ->where('c.id = :chambreId')
+                ->andWhere('r.date_start < :endDate AND r.date_end > :startDate')
+                ->setParameter('chambreId', $chambre->getId())
+                ->setParameter('startDate', $startDateTime)
+                ->setParameter('endDate', $endDateTime)
+                ->getQuery()
+                ->getResult();
+
+            if (count($reservations) === 0) {
+                $availableChambres[] = $chambre;
+            }
+        }
+
+        return $this->render('hotels_chambres/details.html.twig', [
+            'hotel' => $hotel,
+            'hotels' => $hotels,
+            'start_date' => $startDate,
+            'end_date' => $endDate,
+            'guests' => $guests,
+            'availableChambres' => $availableChambres, 
+        ]);
+    }
 }
